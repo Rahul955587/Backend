@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
         res.end("Abhay123");
     }
     else if (url == "/home" && method == "GET") {
-        res.end("<h1>Hello</h1>")
+        res.end("<h1>Hello Sir</h1>")
     }
 });
 

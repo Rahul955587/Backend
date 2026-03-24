@@ -1,0 +1,6 @@
+What is Virtual DOM? how it is diffrent from real DOM?
+How handle array in react? Answer-map.
+diff btw FunctionalComponent and ClassComponent.
+React Props and States.
+html4 and 5
+what is promise in js

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DevConnect Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+
+  <div class="login-card">
+    <h1 class="logo">DevConnect</h1>
+    <h3>Enter your login credentials</h3>
+
+    <input id="loginEmail" placeholder="Enter your Email">
+    <input id="loginPassword" type="password" placeholder="Enter your Password">
+
+    <button class="btn" onclick="login()">Login</button>
+
+    <p class="link">
+      Not registered?
+      <span onclick="showRegister()">Create an account</span>
+    </p>
+  </div>
+
+  <!-- REGISTER BOX -->
+  <div class="login-card hidden" id="registerBox">
+    <h2>Create Account</h2>
+
+    <input id="name" placeholder="Name">
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+
+    <button class="btn" onclick="register()">Register</button>
+
+    <p class="link">
+      Already have an account?
+      <span onclick="showLogin()">Login</span>
+    </p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

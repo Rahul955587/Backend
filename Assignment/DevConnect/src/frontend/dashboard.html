@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard - DevConnect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>DevConnect</h2>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Create Post</h2>
+    <input id="title" placeholder="Title">
+    <textarea id="content" placeholder="Write something..."></textarea>
+    <button onclick="createPost()">Post</button>
+  </div>
+
+  <div class="card">
+    <h2>All Posts</h2>
+    <button onclick="getPosts()">Refresh</button>
+    <div id="posts"></div>
+  </div>
+
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

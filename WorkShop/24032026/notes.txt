@@ -1,0 +1,3 @@
+model-- schema
+gitignore-- for ignore big modules file to push on git hub
+.env -- for passwords

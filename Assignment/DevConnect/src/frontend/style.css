@@ -4,7 +4,6 @@ body {
   background: linear-gradient(to right, #e0eafc, #cfdef3);
 }
 
-/* Center container */
 .login-container {
   height: 100vh;
   display: flex;
@@ -12,7 +11,6 @@ body {
   align-items: center;
 }
 
-/* Card */
 .login-card {
   background: white;
   padding: 30px;

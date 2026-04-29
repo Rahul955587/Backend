@@ -1,22 +1,26 @@
 const Post = require("../models/Post");
 
-// CREATE
 exports.createPost = async (req, res) => {
-  const post = await Post.create({
-    ...req.body,
-    author: req.user.id,
-  });
+  try {
+    const post = await Post.create({
+      title: req.body.title,
+      content: req.body.content || "",
+      image: req.file ? req.file.filename : null,
+      author: req.user.id,
+    });
 
-  res.status(201).json(post);
+    res.status(201).json(post);
+  } catch (err) {
+    console.log(err); // IMPORTANT
+    res.status(500).json({ message: "Error creating post" });
+  }
 };
 
-// GET ALL
 exports.getPosts = async (req, res) => {
   const posts = await Post.find().populate("author", "name");
   res.json(posts);
 };
 
-// GET ONE
 exports.getPost = async (req, res) => {
   const post = await Post.findById(req.params.id);
 
@@ -25,7 +29,6 @@ exports.getPost = async (req, res) => {
   res.json(post);
 };
 
-// UPDATE
 exports.updatePost = async (req, res) => {
   const post = await Post.findById(req.params.id);
 
@@ -39,7 +42,6 @@ exports.updatePost = async (req, res) => {
   res.json(post);
 };
 
-// DELETE
 exports.deletePost = async (req, res) => {
   const post = await Post.findById(req.params.id);
 
@@ -50,4 +52,12 @@ exports.deletePost = async (req, res) => {
   await post.deleteOne();
 
   res.json({ message: "Deleted" });
+};
+
+exports.getMyPosts = async (req, res) => {
+  const posts = await Post.find({ author: req.user.id }).populate(
+    "author",
+    "name",
+  );
+  res.json(posts);
 };

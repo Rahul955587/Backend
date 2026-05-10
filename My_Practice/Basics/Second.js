@@ -6,6 +6,7 @@ const rahul={
 
 const sum = (a,b) => {
     return a + b;
+    
 }
 
 // module.exports = rahul;
